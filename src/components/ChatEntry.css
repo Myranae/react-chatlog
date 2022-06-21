@@ -58,6 +58,10 @@ button {
   text-align: left;
 }
 
+.chat-entry.local {
+  text-align: left;
+}
+
 .chat-entry.local .entry-time {
   text-align: right;
 }
@@ -66,6 +70,10 @@ button {
   background-color: #ffffe0;
   left: -18px;
 }
+
+/* .chat-entry.local .entry-bubble {
+  color: red;
+} */
 
 .chat-entry.local .entry-bubble:hover::before {
   background-color: #fefea2;

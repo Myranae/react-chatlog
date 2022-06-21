@@ -3,6 +3,7 @@ import chatMessages from './data/messages.json';
 import ChatLog from './components/ChatLog';
 
 import './App.css';
+import ColorChoice from './components/ColorChoice';
 
 const App = () => {
   const [messagesData, setMessagesData] = useState(chatMessages);
@@ -16,6 +17,13 @@ const App = () => {
       setNumLiked(numLiked + 1);
     }
   };
+
+  const [colorChoices, setColorChoiches] = useState({
+    userOne: 'green',
+    userTwo: 'blue',
+  });
+
+  const setColorCallback = () => {};
 
   const onUpdateLikeFx = (id) => {
     const newMessages = messagesData.map((message) => {
@@ -47,11 +55,7 @@ const App = () => {
         <h1>
           Chat between {userOne} and {userTwo}
         </h1>
-        <section>
-          <h2 className="widget" id="heartWidget">
-            {numLiked} ❤️s
-          </h2>
-        </section>
+        <ColorChoice userOne={userOne} userTwo={userTwo} numLiked={numLiked} />
       </header>
       <main>
         <ChatLog
